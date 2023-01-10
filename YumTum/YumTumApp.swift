@@ -11,7 +11,7 @@ import SwiftUI
 struct YumTumApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DessertView()
         }
     }
 }

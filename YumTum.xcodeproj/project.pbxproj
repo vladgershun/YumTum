@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		F5F8A785296DD8B000BBB641 /* YumTumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A784296DD8B000BBB641 /* YumTumApp.swift */; };
-		F5F8A787296DD8B000BBB641 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A786296DD8B000BBB641 /* ContentView.swift */; };
+		F5F8A787296DD8B000BBB641 /* DessertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A786296DD8B000BBB641 /* DessertView.swift */; };
 		F5F8A789296DD8B100BBB641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F8A788296DD8B100BBB641 /* Assets.xcassets */; };
 		F5F8A78C296DD8B100BBB641 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5F8A78B296DD8B100BBB641 /* Preview Assets.xcassets */; };
 		F5F8A796296DD8B100BBB641 /* YumTumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A795296DD8B100BBB641 /* YumTumTests.swift */; };
 		F5F8A7A0296DD8B100BBB641 /* YumTumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A79F296DD8B100BBB641 /* YumTumUITests.swift */; };
 		F5F8A7A2296DD8B100BBB641 /* YumTumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A7A1296DD8B100BBB641 /* YumTumUITestsLaunchTests.swift */; };
+		F5F8A7B0296DDB3A00BBB641 /* DessertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A7AF296DDB3A00BBB641 /* DessertModel.swift */; };
+		F5F8A7B2296DDB4400BBB641 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A7B1296DDB4400BBB641 /* DetailModel.swift */; };
+		F5F8A7B5296DDCE400BBB641 /* DessertVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A7B4296DDCE400BBB641 /* DessertVM.swift */; };
+		F5F8A7B7296DDD2300BBB641 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F8A7B6296DDD2300BBB641 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		F5F8A781296DD8B000BBB641 /* YumTum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumTum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F8A784296DD8B000BBB641 /* YumTumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumTumApp.swift; sourceTree = "<group>"; };
-		F5F8A786296DD8B000BBB641 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F5F8A786296DD8B000BBB641 /* DessertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertView.swift; sourceTree = "<group>"; };
 		F5F8A788296DD8B100BBB641 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5F8A78B296DD8B100BBB641 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5F8A791296DD8B100BBB641 /* YumTumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumTumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,10 @@
 		F5F8A79B296DD8B100BBB641 /* YumTumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumTumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F8A79F296DD8B100BBB641 /* YumTumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumTumUITests.swift; sourceTree = "<group>"; };
 		F5F8A7A1296DD8B100BBB641 /* YumTumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumTumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F5F8A7AF296DDB3A00BBB641 /* DessertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertModel.swift; sourceTree = "<group>"; };
+		F5F8A7B1296DDB4400BBB641 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		F5F8A7B4296DDCE400BBB641 /* DessertVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertVM.swift; sourceTree = "<group>"; };
+		F5F8A7B6296DDD2300BBB641 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				F5F8A784296DD8B000BBB641 /* YumTumApp.swift */,
-				F5F8A786296DD8B000BBB641 /* ContentView.swift */,
+				F5F8A7B6296DDD2300BBB641 /* Utilities.swift */,
+				F5F8A7B8296DDD4700BBB641 /* Views */,
+				F5F8A7B3296DDCC000BBB641 /* ViewModels */,
+				F5F8A7AE296DDAE800BBB641 /* Models */,
 				F5F8A788296DD8B100BBB641 /* Assets.xcassets */,
 				F5F8A78A296DD8B100BBB641 /* Preview Content */,
 			);
@@ -125,6 +136,31 @@
 				F5F8A7A1296DD8B100BBB641 /* YumTumUITestsLaunchTests.swift */,
 			);
 			path = YumTumUITests;
+			sourceTree = "<group>";
+		};
+		F5F8A7AE296DDAE800BBB641 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5F8A7AF296DDB3A00BBB641 /* DessertModel.swift */,
+				F5F8A7B1296DDB4400BBB641 /* DetailModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F5F8A7B3296DDCC000BBB641 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F5F8A7B4296DDCE400BBB641 /* DessertVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F5F8A7B8296DDD4700BBB641 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5F8A786296DD8B000BBB641 /* DessertView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5F8A787296DD8B000BBB641 /* ContentView.swift in Sources */,
+				F5F8A7B7296DDD2300BBB641 /* Utilities.swift in Sources */,
+				F5F8A7B2296DDB4400BBB641 /* DetailModel.swift in Sources */,
+				F5F8A7B5296DDCE400BBB641 /* DessertVM.swift in Sources */,
+				F5F8A787296DD8B000BBB641 /* DessertView.swift in Sources */,
+				F5F8A7B0296DDB3A00BBB641 /* DessertModel.swift in Sources */,
 				F5F8A785296DD8B000BBB641 /* YumTumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
