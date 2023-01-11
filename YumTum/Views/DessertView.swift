@@ -38,7 +38,7 @@ struct DessertView: View {
             case .loading:
                 ProgressView()
             default:
-                EmptyView()
+                ProgressView()
             }
         }
         .task {

@@ -51,10 +51,10 @@ struct DetailView: View {
             case .loading:
                 ProgressView()
             default:
-                EmptyView()
+                ProgressView()
             }
         }
-        .task(id: detailVM.mealID) {
+        .task(id: mealID) {
             detailVM.mealID = self.mealID
             await detailVM.fetchDetails()
         }
