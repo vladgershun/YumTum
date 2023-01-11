@@ -18,7 +18,8 @@ struct DessertService {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let decodedResponse = try JSONDecoder().decode(AllDessert.self, from: data)
-            return decodedResponse.meals
+            let results = decodedResponse.meals.sorted{ $0.strMeal < $1.strMeal }
+            return results
         } catch {
             throw ErrorType.notDecodable
         }
