@@ -17,7 +17,7 @@ struct DessertView: View {
             switch dessertVM.state {
             case .success(let allDessert):
                 List(allDessert, id: \.idMeal) { dessert in
-//                    NavigationLink(destination: PokemonView(pokemonName: pokemon.name)) {
+                    NavigationLink(destination: DetailView(mealID: dessert.idMeal)) {
                         HStack {
                             AsyncImage(url: URL(string: dessert.strMealThumb), scale: 2) { image in
                                 image
@@ -27,10 +27,9 @@ struct DessertView: View {
                             }
                             .cornerRadius(10)
                             .frame(width: 60, height: 60)
-                            
-                            Text(dessert.strMeal)
                         }
-//                    }
+                            Text(dessert.strMeal)
+                    }
                 }
                 .navigationTitle("Desserts")
             case .loading:
