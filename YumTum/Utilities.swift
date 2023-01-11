@@ -19,3 +19,13 @@ enum ErrorType: LocalizedError {
         }
     }
 }
+
+extension Optional {
+    var isPresent: Bool {
+        get { self != nil }
+        set {
+            precondition(newValue == false)
+            self = nil
+        }
+    }
+}

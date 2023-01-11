@@ -17,20 +17,23 @@ struct DessertView: View {
             switch dessertVM.state {
             case .success(let allDessert):
                 List(allDessert, id: \.idMeal) { dessert in
+                    
                     NavigationLink(destination: DetailView(mealID: dessert.idMeal)) {
                         HStack {
-                            AsyncImage(url: URL(string: dessert.strMealThumb), scale: 2) { image in
+                            AsyncImage(url: URL(string: dessert.strMealThumb), scale: 1) { image in
                                 image
                                     .resizable()
                             } placeholder: {
-                                Color.gray
+                                ProgressView()
                             }
                             .cornerRadius(10)
                             .frame(width: 60, height: 60)
                         }
-                            Text(dessert.strMeal)
+                        
+                        Text(dessert.strMeal)
                     }
                 }
+                
                 .navigationTitle("Desserts")
             case .loading:
                 ProgressView()
@@ -41,7 +44,7 @@ struct DessertView: View {
         .task {
             await dessertVM.fetchAllDessert()
         }
-//        .alert(isPresented: $pokemonVM.hasError.isPresent, error: pokemonVM.hasError) { }
+        .alert(isPresented: $dessertVM.hasError.isPresent, error: dessertVM.hasError) { }
         
     }
 }

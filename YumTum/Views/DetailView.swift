@@ -16,35 +16,37 @@ struct DetailView: View {
         ZStack {
             switch detailVM.state {
             case .success(let details):
-                Section {
-                    AsyncImage(url: URL(string: details.strMealThumb), scale: 2) { image in
-                        image
-                            .resizable()
-                    } placeholder: {
-                        Color.gray
-                    }
-                    
-                    DisclosureGroup {
-                        Text(details.strInstructions)
-                    } label: {
-                        HStack(spacing: 20) {
-                            Image(systemName: "book")
-                            Text("Instructions")
+                List(details, id: \.idMeal) { dessert in
+                    Section {
+                        AsyncImage(url: URL(string: dessert.strMealThumb), scale: 2) { image in
+                            image
+                                .resizable()
+                        } placeholder: {
+                            ProgressView()
                         }
+                        
+                        DisclosureGroup {
+                            Text(dessert.strInstructions)
+                        } label: {
+                            HStack(spacing: 20) {
+                                Image(systemName: "book")
+                                Text("Instructions")
+                            }
+                        }
+                        
+                        DisclosureGroup {
+                            IngredientsView(ingredients: dessert.ingredients)
+                        } label: {
+                            HStack(spacing: 20) {
+                                Image(systemName: "cart")
+                                Text("Ingredients")
+                            }
+                        }
+                        
+                    } header: {
+                        Text(dessert.strMeal)
+                            .font(.title2)
                     }
-                    
-//                    DisclosureGroup {
-//                        IngredientsView(ingredients: details.ingredients)
-//                    } label: {
-//                        HStack(spacing: 20) {
-//                            Image(systemName: "cart")
-//                            Text("Ingredients")
-//                        }
-//                    }
-                    
-                } header: {
-                    Text(details.strMeal)
-                        .font(.title2)
                 }
             case .loading:
                 ProgressView()
@@ -52,30 +54,24 @@ struct DetailView: View {
                 EmptyView()
             }
         }
-        .task {
+        .task(id: detailVM.mealID) {
             detailVM.mealID = self.mealID
             await detailVM.fetchDetails()
         }
+        .alert(isPresented: $detailVM.hasError.isPresent, error: detailVM.hasError) { }
     }
 }
 
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailView()
-//    }
-//}
+struct IngredientsView: View {
+    var ingredients: [Recipe.Ingredient]
 
-
-//struct IngredientsView: View {
-//    var ingredients: [Details.Ingredient]
-//
-//    var body: some View {
-//        ForEach(ingredients, id: \.ingredient) { item in
-//            HStack {
-//                Text("• \(item.ingredient)")
-//                Spacer()
-//                Text(item.measurement)
-//            }
-//        }
-//    }
-//}
+    var body: some View {
+        ForEach(ingredients, id: \.ingredient) { item in
+            HStack {
+                Text("• \(item.ingredient)")
+                Spacer()
+                Text(item.measurement)
+            }
+        }
+    }
+}

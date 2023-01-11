@@ -22,7 +22,6 @@ struct DessertService {
         } catch {
             throw ErrorType.notDecodable
         }
-        
     }
 }
 

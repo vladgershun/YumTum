@@ -9,7 +9,7 @@ import Foundation
 
 struct DetailService {
     
-    func fetchDetails(_ mealID: String) async throws -> Details {
+    func fetchDetails(_ mealID: String) async throws -> [Recipe] {
 
         guard let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(mealID)") else {
             throw ErrorType.badConnection
@@ -17,8 +17,8 @@ struct DetailService {
 
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-            let decodedResponse = try JSONDecoder().decode(Details.self, from: data)
-            return decodedResponse
+            let decodedResponse = try JSONDecoder().decode(DessertDetails.self, from: data)
+            return decodedResponse.meals
         } catch {
             throw ErrorType.notDecodable
         }
@@ -32,7 +32,7 @@ final class DetailVM: ObservableObject {
     enum State {
         case notAvailable
         case loading
-        case success(data: Details)
+        case success(data: [Recipe])
         case failed(error: ErrorType)
     }
     

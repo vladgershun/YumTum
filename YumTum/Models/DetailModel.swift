@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Details: Decodable {
+struct DessertDetails: Decodable {
+    let meals: [Recipe]
+}
+
+struct Recipe: Decodable {
     
     public let idMeal: String
     public let strMeal: String
@@ -43,8 +47,6 @@ struct Details: Decodable {
         self.strMealThumb = strMealThumb
         self.strInstructions = strInstructions
         self.ingredients = ingredients.map{ name, measurement in Ingredient(ingredient: name, measurement: measurement) }
-//        let f = Ingredient.init(ingredient:measurement:)
-//        self.ingredients = ingredients.map(f)
     }
 
     public init(from decoder: Decoder) throws {
@@ -69,14 +71,3 @@ struct Details: Decodable {
         }
     }
 }
-
-
-//● Meal name
-//● Instructions
-//● Ingredients/measurements
-
-
-//● Be sure to filter out any null or empty values from the API before displaying them.
-//● UI/UX design is not what you’re being evaluated on, but the app should be user friendly and
-//should take basic app design principles into account.
-//● Project should compile using the latest version of Xcode.
