@@ -41,14 +41,6 @@ struct Recipe: Decodable {
         }
     }
 
-    public init(idMeal: String, strMeal: String, strMealThumb: String, strInstructions: String, ingredients: [(String, String)]) {
-        self.idMeal = idMeal
-        self.strMeal = strMeal
-        self.strMealThumb = strMealThumb
-        self.strInstructions = strInstructions
-        self.ingredients = ingredients.map{ name, measurement in Ingredient(ingredient: name, measurement: measurement) }
-    }
-
     public init(from decoder: Decoder) throws {
         ingredients = []
 
