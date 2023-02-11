@@ -1,5 +1,5 @@
 # YumTum
-# SwiftUI application that dispalys a list of desserts and details about them.
+SwiftUI application that dispalys a list of desserts and details about them.
 
 ### Dessert Categories
 ![dessert](https://user-images.githubusercontent.com/77139888/218237355-859aa493-835d-4b17-a598-eccf8771db15.png)
